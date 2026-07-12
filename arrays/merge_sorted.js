@@ -1,29 +1,42 @@
-var merge = function(nums1, m, nums2, n) {
-    let i=0,j=0
-    let arr=[]
-    while(i<m && j<n){
-        if(nums1[i]<nums2[j]){
-            arr.push(nums1[i])
-            i++
-        }
-        else{
-            arr.push(nums2[j])
-            j++
-        }
-    }
+// var merge = function(nums1, m, nums2, n) {
+//     let i=0,j=0
+//     let arr=[]
+//     while(i<m && j<n){
+//         if(nums1[i]<=nums2[j]){
+//             arr.push(nums1[i])
+//             i++
+//         }
+//         else{
+//             arr.push(nums2[j])
+//             j++
+//         }
+//     }
 
- while(i<m){
-    arr.push(nums1[i])
-    i++
+//  while(i<m){
+//     arr.push(nums1[i])
+//     i++
+//  }
+
+//  while(j<n){
+//     arr.push(nums2[j])
+//     j++
+//  }
+//     for(let k=0;k<m+n;k++){
+//         nums1[k]=arr[k]
+//     }
+// };
+
+// let array=[]
+// array=merge([1,2,8,9,34],5,[3,3,6,7,8,8],6)
+// console.log(array)
+
+ var merge = function(nums1, m, nums2, n) {
+    nums1.push(...nums2)
+    nums1.sort((a,b)=>a-b)
+    return nums1
  }
-
- while(j<n){
-    arr.push(nums2[j])
-    j++
- }
-    return arr
-};
-
-let array=[]
-array=merge([1,2,8,9,34],5,[3,3,6,7,8,8],6)
-console.log(array)
+ let nums1=[1,2,3,4,5]
+ let nums2=[6,7,8,9,10]
+ let array=[]
+merge(nums1,5,nums2,5)
+console.log(nums1)
