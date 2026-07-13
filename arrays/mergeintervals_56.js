@@ -7,9 +7,11 @@ var merge = function(intervals) {
         if(intervals[i][1]<intervals[i+1][1]){
             intervals[i][1]=intervals[i+1][1]
             intervals.splice(i+1,1)
+            i--
         }
         else{
         intervals.splice(i+1,1)
+        i--
         }
      }
 
