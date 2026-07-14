@@ -9,6 +9,12 @@ s.push(4);
 cout<<s.top()<<endl;
 int s1=s.top();
 cout<<s1<<endl;
+if(s.empty()){
+    cout<<"stcck is empty"<<endl;
+}
+else {
+    cout<<"stack is not empty"<<endl;
+}
 return 0;
 }
 
